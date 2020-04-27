@@ -1,13 +1,13 @@
 [Unit]
-Description=Small description of the service
+Description=Dataiku DSS service
 After=network.target
 
 [Service]
 Type=simple
-User=__APP__
-Group=__APP__
-WorkingDirectory=__FINALPATH__/
-ExecStart=__FINALPATH__/script >> /var/log/__APP__/__APP__.log 2>&1
+User=YNH_DATAIKU_DSS_USER
+Group=YNH_DATAIKU_DSS_USER
+WorkingDirectory=YNH_DATAIKU_DSS_PATH/
+ExecStart=YNH_DATAIKU_DSS_FINAL_PATH/script >> /var/log/YNH_DATAIKU_DSS_PATH/YNH_DATAIKU_DSS_PATH.log 2>&1
 
 [Install]
 WantedBy=multi-user.target
