@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=YNH_DATAIKU_DSS_USER
 Group=YNH_DATAIKU_DSS_USER
-WorkingDirectory=YNH_DATAIKU_DSS_PATH/
+WorkingDirectory=YNH_DATAIKU_DSS_FINAL_PATH/
 ExecStart=YNH_DATAIKU_DSS_FINAL_PATH/dss_home/bin/dss start >> /var/log/YNH_DATAIKU_DSS_PATH/YNH_DATAIKU_DSS_PATH.log
 
 [Install]
