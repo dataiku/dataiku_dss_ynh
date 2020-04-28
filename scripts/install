@@ -191,14 +191,10 @@ ynh_system_user_create --username=$app
 ynh_script_progression --message="Making install..." --time --weight=1
 
 # Is it necessary?
-# chown -R "$app":"$app" "$final_path"
+chown -R "$app":"$app" "$final_path"
 # sudo -u $app $final_path/dataiku-dss-7.0.2/installer.sh -d ../dss_home -p $port
-echo $YNH_CWD
 
-ls $final_path
-ls $final_path/dataiku-dss-7.0.2
-
-$final_path/dataiku-dss-7.0.2/installer.sh -d ../dss_home -p $port
+$final_path/dataiku-dss-7.0.2/installer.sh -d $final_path/dss_home -p $port
 
 #=================================================
 
