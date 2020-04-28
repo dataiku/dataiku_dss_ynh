@@ -2,5 +2,5 @@ SOURCE_URL=https://cdn.downloads.dataiku.com/public/dss/7.0.2/dataiku-dss-7.0.2.
 SOURCE_SUM=8d50c25fc91821472b32ae25d44d5176659370069174f232e618d1d878e8c41c
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
-SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=dataiku-dss-7.0.2.tar.gz
+SOURCE_IN_SUBDIR=false
+SOURCE_FILENAME=
