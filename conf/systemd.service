@@ -8,6 +8,8 @@ User=YNH_DATAIKU_DSS_USER
 Group=YNH_DATAIKU_DSS_USER
 WorkingDirectory=YNH_DATAIKU_DSS_FINAL_PATH/
 ExecStart=YNH_DATAIKU_DSS_FINAL_PATH/dss_home/bin/dss start
+ExecStop=YNH_DATAIKU_DSS_FINAL_PATH/dss_home/bin/dss stop
+ExecReload=YNH_DATAIKU_DSS_FINAL_PATH/dss_home/bin/dss restart
 
 [Install]
 WantedBy=multi-user.target
