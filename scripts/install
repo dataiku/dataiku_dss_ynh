@@ -192,12 +192,12 @@ ynh_script_progression --message="Making install..." --time --weight=1
 
 chown -R "$app":"$app" "$final_path"
 
-ls -alh /opt/yunohost/
-
 $final_path/dataiku-dss-7.0.2/scripts/install/install-deps.sh -yes
 sudo -u $app $final_path/dataiku-dss-7.0.2/installer.sh -d $final_path/dss_home -p $port
 
-ls -alh $final_path
+sudo apt-get install jq
+jq  '.ldapSettings.enabled = true | .ldapSettings.url = "ldap://localhost:389/ou=users,dc=yunohost,dc=org"' $final_path/dss_home/config/general-settings.json > dss_home/config/general-settings.json > $final_path/dss_home/config/general-settings.$$.json
+mv $final_path/dss_home/config/general-settings.$$.json $final_path/dss_home/config/general-settings.json
 
 #=================================================
 
