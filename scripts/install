@@ -26,7 +26,6 @@ ynh_abort_if_errors
 
 domain=$YNH_APP_ARG_DOMAIN
 path_url="/"
-admin=$YNH_APP_ARG_ADMIN
 
 ### If it's a multi-instance app, meaning it can be installed several times independently
 ### The id of the app as stated in the manifest is available as $YNH_APP_ID
@@ -68,7 +67,6 @@ ynh_script_progression --message="Storing installation settings..." --time --wei
 
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
-ynh_app_setting_set --app=$app --key=admin --value=$admin
 
 # ynh_app_setting_set --app=$app --key=language --value=$language
 
@@ -197,10 +195,6 @@ sudo -u $app $final_path/dataiku-dss-7.0.2/installer.sh -d $final_path/dss_home 
 sudo apt-get install jq
 jq  '.ldapSettings.enabled = true | .ldapSettings.url = "ldap://localhost:389/dc=yunohost,dc=org"' $final_path/dss_home/config/general-settings.json > $final_path/dss_home/config/general-settings.$$.json
 mv $final_path/dss_home/config/general-settings.$$.json $final_path/dss_home/config/general-settings.json
-
-jq  '.groups += [{"name": "YunoHostAdmin","description": "Imported admin group from YunoHost","sourceType": "LDAP", "ldapGroupNames":'"\"$admin\""', "admin": true,"mayManageUDM": false,"mayCreateProjects": false,"mayCreateProjectsFromMacros": false,"mayCreateProjectsFromTemplates": false,"mayCreateProjectsFromDataikuApps": false,"mayWriteUnsafeCode": false,"mayWriteSafeCode": false,"mayCreateAuthenticatedConnections": false,"mayCreateCodeEnvs": false,"mayCreateClusters": false,"mayDevelopPlugins": false,"mayEditLibFolders": false,"mayManageCodeEnvs": false,"mayManageClusters": false,"mayViewIndexedHiveConnections": false,"mayCreatePublishedAPIServices": false,"mayWriteInRootProjectFolder": true}]' $final_path/dss_home/config/users.json > $final_path/dss_home/config/users.$$.json
-mv $final_path/dss_home/config/users.$$.json $final_path/dss_home/config/users.json
-
 
 #=================================================
 
