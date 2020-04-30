@@ -23,7 +23,7 @@
         "mysql"
     ],
     "arguments": {
-        "install" : [
+        "install": [
             {
                 "name": "domain",
                 "type": "domain",
@@ -32,6 +32,15 @@
                     "fr": "Choisissez un nom de domaine pour Dataiku DSS. Dataiku DSS ne peut pas être installé dans un sous-chemin."
                 },
                 "example": "dataiku.example.com"
+            },
+            {
+                "name": "admin",
+                "type": "user",
+                "ask": {
+                    "en": "Choose an admin user",
+                    "fr": "Choisissez l’administrateur"
+                },
+                "example": "johndoe"
             }
         ]
     }
